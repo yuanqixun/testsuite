@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.eontime.bdp</groupId>
+	<artifactId>testsuite</artifactId>
+	<packaging>jar</packaging>
+	<parent>
+		<groupId>com.eontime.test</groupId>
+		<artifactId>test-bom</artifactId>
+		<version>3.1.0-SNAPSHOT</version>
+	</parent>
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<url>public</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.eontime.bdp</groupId>
+			<artifactId>api</artifactId>
+			<version>3.1.0-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.eontime.bdp.bpm</groupId>
+					<artifactId>bdp-bpm-cdi</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>3.6.6.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.5.6</version>
+		</dependency>
+		
+	</dependencies>
+</project>
